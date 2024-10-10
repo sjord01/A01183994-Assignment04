@@ -49,19 +49,20 @@ function updateDOM(elementId, content) {
 function getGreeting() {
     const hour = new Date().getHours();
     return hour < 12 ? greetingConfig.morning : greetingConfig.evening;
-};
+}
 
 // Function to create greeting HTML
-const createGreetingHtml = ({ message, imageSrc }) => 
-    `<p>${message}</p>
-    <img id="greeting-img" src="${imageSrc}" alt="${message}">`;
+function createGreetingHtml(greeting) {
+    return `<p>${greeting.message}</p>
+    <img id="greeting-img" src="${greeting.imageSrc}" alt="${greeting.message}">`;
+}
 
 // Function to display time-based greeting
-const displayGreeting = () => {
+function displayGreeting() {
     const greeting = getGreeting();
     const greetingHtml = createGreetingHtml(greeting);
     updateDOMSingleHTMLElement('greeting', greetingHtml);
-};
+}
 
 // Call the greeting function when the page loads
 document.addEventListener('DOMContentLoaded', displayGreeting);

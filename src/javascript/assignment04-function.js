@@ -77,6 +77,7 @@ function displayLinkList(linkArray) {
     return htmlOutput;
 }
 
+// Function 2: Listing names
 function displayNameList(nameArray, listType = 'ul') {
     let htmlOutput = {
         messageNonArray: "",
@@ -97,14 +98,14 @@ function displayNameList(nameArray, listType = 'ul') {
         if (allStrings) {
             htmlOutput.messageArray = `<p>Trying with a valid array of names...</p>`;
             if (listType !== 'ul' && listType !== 'ol') {
-                htmlOutput.messageArray += `<p>Error: In HTML only UL or OL lists can be made. There is no '${listType}' list element.</p>`;
+                htmlOutput.messageArray += `<p>Error: In HTML only UL or OL lists can be made. There is no <span class="txt-blue">'${listType}'</span> list element.</p>`;
                 listType = 'ul';
             }
             htmlOutput.list = `<${listType}>` + nameArray.map(name => `<li>${name}</li>`).join('') + `</${listType}>`;
         } else {
             htmlOutput.messageArray = `<p>Trying with an array of names and also junk...</p>`;
             if (listType !== 'ul' && listType !== 'ol') {
-                htmlOutput.messageArray += `<p>Error: In HTML only UL or OL lists can be made. There is no '${listType}' list element.</p>`;
+                htmlOutput.messageArray += `<p>Error: In HTML only UL or OL lists can be made. There is no <span class="txt-blue">'${listType}'</span> list element.</p>`;
                 listType = 'ul';
             }
             htmlOutput.mixedList = `<${listType}>` + nameArray.map(item => {
