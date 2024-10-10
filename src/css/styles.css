@@ -169,7 +169,7 @@ article li:last-child {
     grid-area: 2 / 1 / 2 / -1;
 }
 
-.target-found, .target-not-found {
+.target-found, .error {
     border: 1px solid var(--blue-01);
     background-color: var(--light-blue-01);
     border-radius: 8px;
@@ -177,7 +177,7 @@ article li:last-child {
     background-position: left 0.5rem top 0.5rem;
 }
 
-.target-not-found {
+.error {
     border: 1px solid red;
     background-color: rgba(255, 0, 0, 0.15);
     background-image: url(../assets/images/thumb-down.svg);

@@ -1,18 +1,16 @@
-// Function 1: Listing images
 function displayImageList(imageArray) {
     if (!Array.isArray(imageArray)) {
-        return "Error: Parameter must be an array of image file names.";
+        return `<li class="error">Error: you must provide an array. '${imageArray}' is not an array</li>`;
     }
 
-    let htmlList = "<ul>";
+    let htmlList = "";
     imageArray.forEach(item => {
         if (typeof item === 'string') {
             htmlList += `<li><img src="${pathToImages}${item}" alt="${item}"></li>`;
         } else {
-            console.error(`Error: "${item}" is not a valid image file name (must be a string).`);
+            console.error(`Error: '${item}' is not a valid filename. It must be a string).`);
         }
     });
-    htmlList += "</ul>";
 
     return htmlList;
 }

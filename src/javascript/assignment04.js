@@ -13,7 +13,13 @@ const greetingConfig = {
 // Function to update the DOM with the result of a function call
 const updateDOM = (elementId, content) => {
     const element = document.getElementById(elementId);
-    if (element) element.innerHTML = content;
+    if (element) {
+        if (element.innerHTML === '') {
+            element.innerHTML = '<ul>' + content + '</ul>';
+        } else {
+            element.querySelector('ul').innerHTML += content;
+        }
+    }
 };
 
 // Function to get greeting based on time
@@ -37,6 +43,8 @@ const displayGreeting = () => {
 // Call the greeting function when the page loads
 document.addEventListener('DOMContentLoaded', displayGreeting);
 
+updateDOM('non-array-invocations', displayImageList(notAnArrayOfImages));
+updateDOM('non-array-invocations', displayImageList(alsoNotAnArrayOfImages));
 
 /*
 // Function 1: Listing images
