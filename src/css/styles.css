@@ -161,12 +161,12 @@ article li:last-child {
     margin-bottom: 0;
 }
 
-#wrapper-list-of-images {
+#wrapper-non-array {
     grid-area: 1 / 1 / 1 / -1;
 }
 
-#wrapper-non-array {
-    grid-area: 2 / 1 / 2 / -1;
+#wrapper-wrong-array-data {
+    grid-area: 2 / 1 / 2 / -1; 
 }
 
 .target-found, .error {
@@ -225,7 +225,11 @@ article li:last-child {
     }
 
     #wrapper-non-array {
-        grid-area: 2 / 1 / 2 / 5;
+        grid-area: 1 / 1 / 1 / 5;
+    }
+
+    #wrapper-wrong-array-data {
+        grid-area: 1 / 5 / 1 / -1; 
     }
 
 }
@@ -267,7 +271,11 @@ article li:last-child {
     }
 
     #wrapper-non-array {
-        grid-area: 2 / 1 / 2 / 7;
+        grid-area: 1 / 1 / 1 / 7;
+    }
+
+    #wrapper-wrong-array-data {
+        grid-area: 1 / 7 / 1 / -1; 
     }
 
 }
